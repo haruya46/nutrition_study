@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            投稿の一覧
+            投稿の一覧１２２２２２２２２
         </h2>
 
 

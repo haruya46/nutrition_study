@@ -14,6 +14,7 @@ class QuizController extends Controller
      */
     public function index()
     {
+
         $quizes=quiz::all();
         return view("quiz.index",compact("quizes"));
     }
@@ -23,8 +24,8 @@ class QuizController extends Controller
      */
     public function create()
     {
-        return view('quiz.create');
-        
+        return view("quiz.create");
+
     }
 
     /**
@@ -35,7 +36,7 @@ class QuizController extends Controller
         $quiz=new Quiz();
         $quiz->note=$request->note;
         $quiz->save();
-        return back();
+        return back()->with("message", "クイズを保存しました。");
     }
 
     /**
@@ -59,7 +60,7 @@ class QuizController extends Controller
      */
     public function update(Request $request, quiz $quiz)
     {
-       
+
         $quiz->note=$request->note;
         $quiz->save();
         return redirect()->route('quiz.index', $quiz);

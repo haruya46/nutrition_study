@@ -33,8 +33,13 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::resource('/', GuestController::class);
+// ↓ログインユーザー用root
+Route::middleware('auth')->group(
+  function () {
 Route::resource('quiz', QuizController::class);
-
+  }
+);
+// ↑ログインユーザー用root
 // ↑これを書いたのと同じ↓
 // Route::get('post', [PostController::class, 'index'])->name('post.index');
 // Route::get('post/create', [PostController::class, 'create'])->name('post.create');

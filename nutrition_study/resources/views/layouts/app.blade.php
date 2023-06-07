@@ -19,15 +19,22 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
+      @if (isset($header))
+        <header class="bg-white shadow">
+          <div class="max-w-7xl mx-auto py-6">
+            <h2
+              class="font-semibold text:xs lg:text-xl
+                    first-letter:text-gray-800
+                    leading-tight lg:pl-52">
+              {{ $header }}
+            </h2>
+            <div class="fixed z-10 top-20 right-64">
+              <x-message :message="session('message')" />
+              <x-input-error class="mb-4" :messages="$errors->all()" />
+            </div>
+          </div>
+        </header>
+      @endif
             <main>
                 {{ $slot }}
             </main>
