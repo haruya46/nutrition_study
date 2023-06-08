@@ -5,13 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class quiz extends Model
+class Choice extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'note',
-    ];
-    public function chocies() {
-        return $this->hasMany(Choice::class);
+    public function quiz() {
+        return $this->belongsTo(Quiz::class);
     }
 }

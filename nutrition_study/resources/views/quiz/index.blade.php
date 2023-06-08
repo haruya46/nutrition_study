@@ -20,7 +20,11 @@
                             @method('delete')
                             <x-primary-button class="bg-red-700 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除</x-primary-button>
                             </form>
-                            <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{ $quiz->note }}</h1>
+                            <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{$quiz->note}}</h1>
+                           
+                                <p>{{$quiz->choice->note"}}</p>
+                            
+                            
                         </div>
                     </div>
                 </div>

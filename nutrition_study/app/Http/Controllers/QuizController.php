@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\quiz;
+use App\Models\Choice;
+use App\Models\Quiz;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
-
-    public $timestamps = false;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $quizes=quiz::all();
+        $quizes=Quiz::with('quiz')->get();
         return view("quiz.index",compact("quizes"));
     }
 
@@ -24,7 +23,6 @@ class QuizController extends Controller
     public function create()
     {
         return view('quiz.create');
-        
     }
 
     /**
@@ -35,7 +33,12 @@ class QuizController extends Controller
         $quiz=new Quiz();
         $quiz->note=$request->note;
         $quiz->save();
-        return back();
+        $quiz_id=$quiz->id;
+        //↓ここでchoice.storeを呼び出す
+        $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');
+        $ChoiceController->store($request,$quiz_id);
+
+        return back()->with('message', '投稿を作成しました');
     }
 
     /**
