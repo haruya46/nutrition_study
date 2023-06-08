@@ -11,7 +11,12 @@
         <div class="w-full flex flex-col">
           <label for="note" class="font-semibold leading-none mt-4">問題文</label>
           <textarea name="note" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="note"
-            cols="30" rows="10"></textarea>
+            cols="30" rows="10" required></textarea>
+        </div>
+                <div class="w-full flex flex-col">
+          <label for="choice1" class="font-semibold leading-none mt-4">選択</label>
+          <textarea name="choice1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="choice1"
+            cols="20" rows="1" required></textarea>
         </div>
         <x-primary-button class="mt-4">
           送信する

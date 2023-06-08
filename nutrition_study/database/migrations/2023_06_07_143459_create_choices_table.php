@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('choices', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("quiz_id");
+            $table->text("note")->notnull();
             $table->timestamps();
         });
     }

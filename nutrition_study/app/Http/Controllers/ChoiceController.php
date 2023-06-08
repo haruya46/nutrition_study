@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Quiz;
+use App\Models\Choice;
 use Illuminate\Http\Request;
 
-class GuestController extends Controller
+class ChoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $guests=quiz::all();
-        return view("guest.index",compact("guests"));
+        //
     }
 
     /**
@@ -27,15 +26,18 @@ class GuestController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $quiz_id)
     {
-        //
+    $choice =new Choice();
+    $choice->note = $request->choice1;
+    $choice->quiz_id = $quiz_id;
+    $choice->save();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Quiz $quiz)
+    public function show(Choice $choice)
     {
         //
     }
@@ -43,7 +45,7 @@ class GuestController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Quiz $quiz)
+    public function edit(Choice $choice)
     {
         //
     }
@@ -51,7 +53,7 @@ class GuestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Quiz $quiz)
+    public function update(Request $request, Choice $choice)
     {
         //
     }
@@ -59,7 +61,7 @@ class GuestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(quiz $quiz)
+    public function destroy(Choice $choice)
     {
         //
     }

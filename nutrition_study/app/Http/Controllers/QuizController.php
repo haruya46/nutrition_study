@@ -14,7 +14,6 @@ class QuizController extends Controller
      */
     public function index()
     {
-
         $quizes=quiz::all();
         return view("quiz.index",compact("quizes"));
     }
@@ -36,6 +35,11 @@ class QuizController extends Controller
         $quiz=new Quiz();
         $quiz->note=$request->note;
         $quiz->save();
+        $quiz_id=$quiz->id;
+    // ↓ここでchoce.storeを呼び出す
+    $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');
+    $ChoiceController->store($request,$quiz_id);
+        // ↑ここでchoce.storeを呼び出す
         return back()->with("message", "クイズを保存しました。");
     }
 
