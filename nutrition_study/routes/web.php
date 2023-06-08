@@ -25,11 +25,9 @@ use App\Http\Controllers\GuestController;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
+  Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+  Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+  Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::resource('quiz', QuizController::class)->middleware('auth');
@@ -37,21 +35,20 @@ Route::resource('quiz', QuizController::class)->middleware('auth');
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::resource('/', GuestController::class);
 // ↓ログインユーザー用root
-Route::middleware('auth')->group(
-  function () {
-Route::resource('quiz', QuizController::class);
-  }
-);
-// ↑ログインユーザー用root
-// ↑これを書いたのと同じ↓
-// Route::get('post', [PostController::class, 'index'])->name('post.index');
-// Route::get('post/create', [PostController::class, 'create'])->name('post.create');
-// Route::post('post', [PostController::class, 'store'])->name('post.store');
-// Route::get('post/{post}', [PostController::class, 'show'])->name('post.show');
-// Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
-// Route::patch('post/{post}', [PostController::class, 'update'])->name('post.update');
-// Route::delete('post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
+Route::middleware('auth')->group(function () {
+  Route::resource('quiz', QuizController::class);
+  // ↑ログインユーザー用root
+  // ↑これを書いたのと同じ↓
+  // Route::get('post', [PostController::class, 'index'])->name('post.index');
+  // Route::get('post/create', [PostController::class, 'create'])->name('post.create');
+  // Route::post('post', [PostController::class, 'store'])->name('post.store');
+  // Route::get('post/{post}', [PostController::class, 'show'])->name('post.show');
+  // Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+  // Route::patch('post/{post}', [PostController::class, 'update'])->name('post.update');
+  // Route::delete('post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
+
+});
