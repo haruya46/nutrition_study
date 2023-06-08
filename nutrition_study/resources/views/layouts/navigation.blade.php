@@ -71,7 +71,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
-                問題一覧
+            {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
 
