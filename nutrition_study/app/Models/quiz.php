@@ -7,13 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quiz extends Model
 {
-  use HasFactory;
-  protected $fillable = [
-    'note',
-  ];
+    use HasFactory;
+    protected $fillable = [
+        'note',
+    ];
 
-  public function choices()
-  {
-    return $this->hasMany(Choice::class);
-  }
 }
