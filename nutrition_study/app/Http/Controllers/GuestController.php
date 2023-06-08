@@ -12,8 +12,8 @@ class GuestController extends Controller
      */
     public function index()
     {
-        $guests=quiz::all();
-        return view("guest.index",compact("guests"));
+        $guests=Quiz::all();
+        return view("guest.guest_index",compact("guests"));
     }
 
     /**
