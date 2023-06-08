@@ -11,5 +11,8 @@ class Quiz extends Model
     protected $fillable = [
         'note',
     ];
-
+  public function choices()
+  {
+    return $this->hasMany(Choice::class);
+  }
 }

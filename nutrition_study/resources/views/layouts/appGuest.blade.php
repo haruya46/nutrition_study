@@ -18,17 +18,8 @@
 
 <body class="font-sans antialiased">
   <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-    {{-- ↓ログイン済みのユーザーにはこのナビゲーション --}}
-    @auth
-      @include('layouts.navigation')
-    @endauth
-    {{-- ↑ログイン済みのユーザーにはこのナビゲーション --}}
-    {{-- ↓ログイン未のユーザーにはこのナビゲーション --}}
-    @guest
-      @include('layouts.guestnavi')
+    @include('layouts.guestnavi')
 
-    @endguest
-    {{-- ↑ログイン未のユーザーにはこのナビゲーション --}}
 
     <!-- Page Heading -->
     @if (isset($header))

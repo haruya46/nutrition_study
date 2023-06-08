@@ -13,7 +13,7 @@ class GuestController extends Controller
     public function index()
     {
         $guests=Quiz::all();
-        return view("guest.guest_index",compact("guests"));
+        return view("guest.index",compact("guests"));
     }
 
     /**

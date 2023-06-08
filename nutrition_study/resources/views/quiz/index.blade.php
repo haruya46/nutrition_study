@@ -1,8 +1,6 @@
 <x-app-layout>
   <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      投稿の一覧１２２２２２２２２
-    </h2>
+      問題一覧(guest)
 
 
   </x-slot>
@@ -25,9 +23,13 @@
               </form>
               <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{ $quiz->note }}</h1>
             </div>
-            @foreach ($quiz->choices as $choice)
-              <p>{{ $choice->note }}</p>
-            @endforeach
+            <div class="bg-slate-900 text-amber-200">
+
+              <p>選択肢</p>
+              @foreach ($quiz->choices as $key => $choice)
+                <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
+              @endforeach
+            </div>
           </div>
         </div>
       </div>
