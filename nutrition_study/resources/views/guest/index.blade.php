@@ -1,4 +1,4 @@
-<x-appGuest-layouts>
+<x-appGuest-layout>
  <x-slot name="header">
       問題一覧(guest)
   </x-slot>
@@ -15,4 +15,4 @@
       </div>
     @endforeach
   </div>
-</x-appGuest-layouts>
+</x-appGuest-layout>
