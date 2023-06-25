@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Quiz;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 class QuizController extends Controller
 {
     /**
@@ -12,7 +11,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $quizes = quiz::all();
+        $quizes =quiz::all();
         return view("quiz.index", compact("quizes"));
     }
 
