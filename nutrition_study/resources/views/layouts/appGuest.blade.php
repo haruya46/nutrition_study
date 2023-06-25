@@ -44,4 +44,8 @@
   </div>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> haruya

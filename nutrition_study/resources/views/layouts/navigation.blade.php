@@ -128,4 +128,8 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 </nav>
+=======
+</nav>
+>>>>>>> haruya

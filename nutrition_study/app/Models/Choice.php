@@ -7,10 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Choice extends Model
 {
+<<<<<<< HEAD
   use HasFactory;
 
   public function quiz()
   {
     return $this->belongsTo(Quiz::class);
   }
+=======
+    use HasFactory;
+    public function quiz()
+    {
+      return $this->belongsTo(Quiz::class);
+    }
+>>>>>>> haruya
 }

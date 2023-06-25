@@ -59,7 +59,10 @@ class GuestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(quiz $quiz)
+
+
+    public function destroy(Quiz $quiz)
+
     {
         //
     }

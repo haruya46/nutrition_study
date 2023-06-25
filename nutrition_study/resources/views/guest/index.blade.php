@@ -16,3 +16,7 @@
     @endforeach
   </div>
 </x-appGuest-layout>
+<<<<<<< HEAD
+=======
+
+>>>>>>> haruya

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
 
 body {
     overflow-y: scroll;
@@ -157,3 +158,5 @@ color: #333;
     -1px -1px 1px #0003ff78;
   }
 /* ↑文字に影 */
+=======
+>>>>>>> haruya

@@ -26,13 +26,21 @@
             <div class="bg-slate-900 text-amber-200">
 
               <p>選択肢</p>
-              @foreach ($quiz->choices as $key => $choice)
-                <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
-              @endforeach
+
+=======
+                @foreach ($quiz->choices as $key => $choice)
+                  <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
+                  <br>
+                @endforeach
+>>>>>>> haruya
             </div>
           </div>
         </div>
       </div>
     @endforeach
   </div>
+<<<<<<< HEAD
+
+=======
 </x-app-layout>
+>>>>>>> haruya
