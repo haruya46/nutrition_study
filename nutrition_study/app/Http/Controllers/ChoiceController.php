@@ -28,10 +28,14 @@ class ChoiceController extends Controller
      */
     public function store(Request $request,$quiz_id)
     {
-        $choice =new Choice();
-        $choice->note = $request->choice1;
-        $choice->quiz_id = $quiz_id;
-        $choice->save();
+        $choicesId=1;
+        while($choicesId<5){
+            $choice =new Choice();
+            $choice->note = $request->$choicesId;
+            $choice->quiz_id = $quiz_id;
+            $choice->save();
+            $choicesId+=1;
+        }
     }
 
     /**
@@ -47,7 +51,7 @@ class ChoiceController extends Controller
      */
     public function edit(Choice $choice)
     {
-        //
+        return view('quiz.edit', compact('choice'));
     }
 
     /**

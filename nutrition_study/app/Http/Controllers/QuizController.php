@@ -35,7 +35,7 @@ class QuizController extends Controller
         $quiz_id= $quiz->id;
         $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');
         $ChoiceController->store($request, $quiz_id);
-    return back()->with("message", "問題を保存しました。");
+        return back()->with("message", "問題を保存しました。");
     }
 
     /**
