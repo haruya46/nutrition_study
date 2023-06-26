@@ -5,9 +5,6 @@
         </h2>
     </x-slot>
 
-<<<<<<< HEAD
-
-=======
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-4 sm:p-8">
             <form method="post" action="{{route('quiz.update', $quiz)}}" enctype="multipart/form-data">
@@ -28,6 +25,6 @@
             </form>
         </div>
     </div>
->>>>>>> haruya
+
 
 </x-app-layout>

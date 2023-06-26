@@ -27,20 +27,18 @@
 
               <p>選択肢</p>
 
-=======
+
                 @foreach ($quiz->choices as $key => $choice)
                   <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
                   <br>
                 @endforeach
->>>>>>> haruya
+
             </div>
           </div>
         </div>
       </div>
     @endforeach
   </div>
-<<<<<<< HEAD
 
-=======
 </x-app-layout>
->>>>>>> haruya
+
