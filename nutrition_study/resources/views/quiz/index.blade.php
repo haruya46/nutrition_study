@@ -21,18 +21,16 @@
                 <x-primary-button class="bg-red-700 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除
                 </x-primary-button>
               </form>
-              <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{ $quiz->note }}</h1>
-            </div>
-            <div class="bg-slate-900 text-amber-200">
+                <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{ $quiz->note }}</h1>
+              
+                <div class="bg-slate-900 text-amber-200">
+                  <p>選択肢</p>
+                    @foreach ($quiz->choices as $key => $choice)
+                      <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
+                      <br>
+                    @endforeach
 
-              <p>選択肢</p>
-
-
-                @foreach ($quiz->choices as $key => $choice)
-                  <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
-                  <br>
-                @endforeach
-
+                </div>
             </div>
           </div>
         </div>

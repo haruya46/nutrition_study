@@ -18,10 +18,12 @@
           <label class="font-semibold leading-none mt-4">選択</label>
           <!-- <textarea name="choice1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="choice1" cols="20" rows="1" required></textarea> -->
           <!--ここから選択肢を５個を一度に登録する処理-->
-          {{$choicesId=1;}}
-          @while( $choicesId <= 5)
+          @php
+            $choicesId=0;
+          @endphp
+          @while( $choicesId < 5)
+          {{$choicesId +=1;}}
             <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="1" required></textarea>
-            {{$choicesId +=1;}}
           @endwhile
           <!--ここまで-->
         </div>

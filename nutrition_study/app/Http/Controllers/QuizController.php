@@ -62,7 +62,10 @@ class QuizController extends Controller
     {
         $quiz->note = $request->note;
         $quiz->save();
-        return redirect()->route('quiz.index', $quiz);
+        $quiz_id= $quiz->id;
+        $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');
+        $ChoiceController->update($request, $quiz_id,$quiz);
+        return back()->with("message", "問題を保存しました。");
     }
 
     /**
@@ -71,7 +74,9 @@ class QuizController extends Controller
     public function destroy(Quiz $quiz)
     {
         $quiz->delete();
-        return redirect()->route('quiz.index')->with('message', '投稿を削除しました');
+        $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');
+        $ChoiceController->destroy($quiz);
+        return redirect()->route('quiz.index')->with('message', $quiz->id.'の投稿を削除しました');
     }
 
 }

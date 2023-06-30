@@ -32,8 +32,8 @@ class ChoiceController extends Controller
     public function store(Request $request,$quiz_id)
     {
         $choicesId=1;
-        while($choicesId<5){
-            $choice =new Choice();
+        while($choicesId<=5){
+            $choice = new Choice();
             $choice->note = $request->$choicesId;
             $choice->quiz_id = $quiz_id;
             $choice->save();
@@ -55,25 +55,34 @@ class ChoiceController extends Controller
      */
     public function edit(Choice $choice)
     {
-
-
-        return view('quiz.edit', compact('choice'));
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
+     * 
+     *  Choice $choice,
      */
-    public function update(Request $request, Choice $choice)
+    public function update(Request $request,$quiz_id,$quiz)
     {
-        //
+        $choicesId=1;
+        foreach($quiz->choices as $choice){
+            $choice->note = $request->$choicesId;
+            $choice->quiz_id = $quiz_id;
+            $choice->save();
+            $choicesId+=1;
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Choice $choice)
+    public function destroy($quiz)
     {
-        //
+        
+        foreach($quiz->choices as $choice){
+            $choice->delete();
+        }
+
     }
 }

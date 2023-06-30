@@ -12,16 +12,24 @@
                 @method('patch')
                 <div class="w-full flex flex-col">
                     <label for="note" class="font-semibold leading-none mt-4">問題文</label>
-                    <textarea name="note" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="note" cols="30" rows="10">{{old('note', $quiz->note)}}</textarea>
+                    <textarea name="note" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="note" cols="30" rows="10">
+                        {{old('note', $quiz->note)}}
+                    </textarea>
                 </div>
                 <div class="w-full flex flex-col">
-                    <label for="choice1" class="font-semibold leading-none mt-4">選択</label>
+                    
+                    {{$choicesId=1;}}
+                    <label for="{{$choicesId}}" class="font-semibold leading-none mt-4">選択</label>
                     <!-- <textarea name="choice1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="choice1" cols="20" rows="1" required></textarea> -->
                     <!--ここから選択肢を５個を一度に登録する処理-->
-                    {{$choicesId=1;}}
+                    
                     @while( $choicesId <= 5)
-                        <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="1" required>{{old('note', $quiz->note[$choicesId])}}</textarea>
-                        {{$choicesId +=1;}}
+                        @foreach ($quiz->choices as $key => $choice)
+                            <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="{{$choicesId}}" rows="1" required>
+                                {{ $choice->note }}
+                            </textarea>
+                            {{$choicesId +=1;}}
+                        @endforeach
                     @endwhile
                     <!--ここまで-->
                 </div>
