@@ -29,7 +29,7 @@
                       <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
                       <br>
                     @endforeach
-
+                    <p class="text-lg text-amber-200 font-semibold hover:underline cursor-pointer">{{ $quiz->commentary }}</p>
                 </div>
             </div>
           </div>

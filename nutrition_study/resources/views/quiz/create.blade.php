@@ -19,13 +19,21 @@
           <!-- <textarea name="choice1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="choice1" cols="20" rows="1" required></textarea> -->
           <!--ここから選択肢を５個を一度に登録する処理-->
           @php
-            $choicesId=0;
+            $choicesId=array(
+              '1'=>'choices1',
+              '2'=>'choices2',
+              '3'=>'choices3',
+              '4'=>'choices4',
+              '5'=>'choices5');
           @endphp
-          @while( $choicesId < 5)
-          {{$choicesId +=1;}}
-            <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="1" required></textarea>
-          @endwhile
+          @foreach( $choicesId as $key=>$choice)
+            {{$key}}
+            <textarea name={{$choice}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="1" required></textarea>
+            <input type="checkbox" name={{$key}}>
+          @endforeach
           <!--ここまで-->
+          <label class="font-semibold leading-none mt-4">解説</label>
+          <textarea name="commentary" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="10" required></textarea>
         </div>
         
 

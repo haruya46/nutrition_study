@@ -17,21 +17,30 @@
                     </textarea>
                 </div>
                 <div class="w-full flex flex-col">
-                    
-                    {{$choicesId=1;}}
-                    <label for="{{$choicesId}}" class="font-semibold leading-none mt-4">選択</label>
-                    <!-- <textarea name="choice1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="choice1" cols="20" rows="1" required></textarea> -->
-                    <!--ここから選択肢を５個を一度に登録する処理-->
-                    
-                    @while( $choicesId <= 5)
+                    @php
+                    $choicesId=0;
+                    $checkId=5;
+                    @endphp
+                    <label class="font-semibold leading-none mt-4">選択</label>
+                    <!--ここから選択肢を５個を一度に編集する処理-->
                         @foreach ($quiz->choices as $key => $choice)
+                            @php
+                            $choicesId +=1;
+                            $checkId +=1
+                            @endphp
+                            {{$choicesId}}
                             <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="{{$choicesId}}" rows="1" required>
                                 {{ $choice->note }}
                             </textarea>
-                            {{$choicesId +=1;}}
+                            @if($choice->answer_flag==1)
+                                <input type="checkbox" name={{$checkId}} checked="checked">
+                            @else
+                                <input type="checkbox" name={{$checkId}}>
+                            @endif
                         @endforeach
-                    @endwhile
                     <!--ここまで-->
+                  
+
                 </div>
                 <x-primary-button class="mt-4">
                     送信する

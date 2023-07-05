@@ -31,13 +31,22 @@ class ChoiceController extends Controller
 
     public function store(Request $request,$quiz_id)
     {
-        $choicesId=1;
-        while($choicesId<=5){
-            $choice = new Choice();
+        $choicesId=array(
+            '1'=>'choices1',
+            '2'=>'choices2',
+            '3'=>'choices3',
+            '4'=>'choices4',
+            '5'=>'choices5');
+        foreach($choicesId as $key=>$choicesId){
+            $choice=new Choice;
             $choice->note = $request->$choicesId;
+            if($request->$key =="on"){
+                $choice->answer_flag=1;
+            }else{
+                $choice->answer_flag=0;
+            }
             $choice->quiz_id = $quiz_id;
             $choice->save();
-            $choicesId+=1;
         }
 
     }
@@ -66,11 +75,18 @@ class ChoiceController extends Controller
     public function update(Request $request,$quiz_id,$quiz)
     {
         $choicesId=1;
+        $checkId=6;
         foreach($quiz->choices as $choice){
             $choice->note = $request->$choicesId;
+            if($request->$checkId=="on"){
+                $choice->answer_flag=1;
+            }else{
+                $choice->answer_flag=0;
+            }
             $choice->quiz_id = $quiz_id;
             $choice->save();
             $choicesId+=1;
+            $checkId+=1;
         }
     }
 

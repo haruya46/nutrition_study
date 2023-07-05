@@ -15,4 +15,5 @@
       </div>
     @endforeach
   </div>
+  
 </x-appGuest-layout>

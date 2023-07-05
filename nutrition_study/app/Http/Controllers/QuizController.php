@@ -32,6 +32,7 @@ class QuizController extends Controller
     {
         $quiz = new Quiz();
         $quiz->note = $request->note;
+        $quiz->commentary=$request->commentary;
         $quiz->save();
         $quiz_id= $quiz->id;
         $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');
