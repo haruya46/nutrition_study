@@ -14,8 +14,7 @@ use App\Http\Controllers\GuestController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/  
-
+*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -48,4 +47,3 @@ Route::middleware('auth')->group(function () {
     // ↑これを書いたのと同じ↑
   
   });
-
