@@ -8,6 +8,9 @@
         <div class="mt-4">
           <div class="bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
             <div class="mt-4">
+              <a href="{{route('guest.show', $quiz) }}">
+                <x-primary-button class="bg-teal-700 float-right">問題を解く</x-primary-button>
+              </a>
               <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{ $quiz->note }}</h1>
             </div>
           </div>
@@ -15,5 +18,4 @@
       </div>
     @endforeach
   </div>
-  
 </x-appGuest-layout>

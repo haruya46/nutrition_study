@@ -37,7 +37,7 @@ class GuestController extends Controller
      */
     public function show(Quiz $quiz)
     {
-        //
+        return view("guest.show",compact('quiz'));
     }
 
     /**

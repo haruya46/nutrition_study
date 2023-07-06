@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
   require __DIR__ . '/auth.php';
   
   Route::get('/', [GuestController::class, 'index'])->name('guest.index');
+  Route::get('show/{quiz}', [GuestController::class, 'show'])->name('guest.show');
+  
   // ↓ログインユーザー用root
   Route::middleware('auth')->group(function () {
     Route::resource('quiz', QuizController::class);
