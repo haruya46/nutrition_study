@@ -29,14 +29,15 @@
                             $checkId +=1
                             @endphp
                             {{$choicesId}}
-                            <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="{{$choicesId}}" rows="1" required>
-                                {{ $choice->note }}
-                            </textarea>
                             @if($choice->answer_flag==1)
                                 <input type="checkbox" name={{$checkId}} checked="checked">
                             @else
                                 <input type="checkbox" name={{$checkId}}>
                             @endif
+                            <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="{{$choicesId}}" rows="1" required>
+                                {{ $choice->note }}
+                            </textarea>
+                            
                         @endforeach
                     <!--ここまで-->
                     <label class="font-semibold leading-none mt-4">解説</label>

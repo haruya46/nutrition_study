@@ -28,8 +28,8 @@
           @endphp
           @foreach( $choicesId as $key=>$choice)
             {{$key}}
-            <textarea name={{$choice}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="1" required></textarea>
             <input type="checkbox" name={{$key}}>
+            <textarea name={{$choice}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="1" required></textarea>
           @endforeach
           <!--ここまで-->
           <label class="font-semibold leading-none mt-4">解説</label>
