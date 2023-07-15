@@ -39,7 +39,8 @@
                             @endif
                         @endforeach
                     <!--ここまで-->
-                  
+                    <label class="font-semibold leading-none mt-4">解説</label>
+                    <textarea name="commentary" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" rows="10" required>{{old('note', $quiz->commentary)}}</textarea>
 
                 </div>
                 <x-primary-button class="mt-4">

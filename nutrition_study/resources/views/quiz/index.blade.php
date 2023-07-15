@@ -27,6 +27,9 @@
                   <p>選択肢</p>
                     @foreach ($quiz->choices as $key => $choice)
                       <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
+                      @if($choice->answer_flag ==1)
+                      <span class="text-red-400">正解</span>
+                      @endif
                       <br>
                     @endforeach
                     <p class="text-lg text-amber-200 font-semibold hover:underline cursor-pointer">{{ $quiz->commentary }}</p>

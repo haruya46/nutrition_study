@@ -62,6 +62,7 @@ class QuizController extends Controller
     public function update(Request $request, Quiz $quiz)
     {
         $quiz->note = $request->note;
+        $quiz->commentary=$request->commentary;
         $quiz->save();
         $quiz_id= $quiz->id;
         $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');

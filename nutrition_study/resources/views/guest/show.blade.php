@@ -16,11 +16,16 @@
         <p>選択肢</p>
           @foreach ($quiz->choices as $key => $choice)
             <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
-            <input type="checkbox" v-model={{$key+1}}>
+            <input type="checkbox" id="{{$key+1}}">
+            @if($choice->answer_flag ==1)
+                      <span class="text-red-400 hidden" id="show-answer">正解</span>
+                      @endif
             <br>
           @endforeach
+          <p id="show-answer-commentary"class="hidden">{{$quiz->commentary}}</p>
+          <p id="guest-show-submit">答えを見る</p>
+          <a href="{{ route('guest.index') }}"id="show-back" class="hidden">戻る</a>
       </div>
     </div>
   </div>
-  
 </x-appGuest-layout>

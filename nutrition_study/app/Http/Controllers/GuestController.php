@@ -40,6 +40,7 @@ class GuestController extends Controller
         return view("guest.show",compact('quiz'));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      */
