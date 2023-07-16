@@ -12,9 +12,7 @@
                 @method('patch')
                 <div class="w-full flex flex-col">
                     <label for="note" class="font-semibold leading-none mt-4">問題文</label>
-                    <textarea name="note" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="note" cols="30" rows="10">
-                        {{old('note', $quiz->note)}}
-                    </textarea>
+                    <textarea name="note" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="note" rows="10">{{old('note', $quiz->note)}}</textarea>
                 </div>
                 <div class="w-full flex flex-col">
                     @php
@@ -34,9 +32,7 @@
                             @else
                                 <input type="checkbox" name={{$checkId}}>
                             @endif
-                            <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="{{$choicesId}}" rows="1" required>
-                                {{ $choice->note }}
-                            </textarea>
+                            <textarea name={{$choicesId}} class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="{{$choicesId}}" rows="1" required>{{ $choice->note }}</textarea>
                             
                         @endforeach
                     <!--ここまで-->

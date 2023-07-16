@@ -14,12 +14,6 @@ $(function(){
         $('#show-answer-commentary').fadeIn();
         $('#guest-show-submit').fadeOut();
         $('#show-back').fadeIn();
-        const selectionAnswer =document.getElementsByName('selection-answer');
-              if(selectionAnswer.checked){
-                console.log("クリックされました");
-              }else{
-                console.log("クリックされなかった");
-              }
     });
 
 
