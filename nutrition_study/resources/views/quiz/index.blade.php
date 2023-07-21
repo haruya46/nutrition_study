@@ -24,9 +24,9 @@
               <div class="text-lg border-solid border-blue-600 border-2 rounded p-2">
                 <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{!! nl2br(htmlspecialchars($quiz->note)) !!}</h1>
               </div>
-              <x-primary-button class="bg-teal-700 my-2" id="quiz-index-choices-button">選択肢と解説を表示にする</x-primary-button>
-              <x-primary-button class="bg-teal-700 my-2 hidden" id="quiz-index-choices-button-hidden">選択肢と解説を非表示にする</x-primary-button>    
-              <div class="text-lg border-solid border-orange-600 border-2 rounded my-2 p-2 hidden" id="quiz-index-choices">
+              <x-primary-button class="bg-teal-700 my-2 quiz-index-choices-button " >選択肢と解説を表示にする</x-primary-button>
+              <x-primary-button class="bg-teal-700 my-2 hidden quiz-index-choices-button-hidden" >選択肢と解説を非表示にする</x-primary-button>    
+              <div class="text-lg border-solid border-orange-600 border-2 rounded my-2 p-2 hidden quiz-index-choices">
                 <p class="text-xl font-semibold ">選択肢</p>
                   @foreach ($quiz->choices as $key => $choice)
                     <span class="pl-5">{{$key+1}}.{{ $choice->note }}</span>
