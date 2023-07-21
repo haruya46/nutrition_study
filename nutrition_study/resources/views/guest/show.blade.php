@@ -15,14 +15,14 @@
       <div class="decoration-inherit my-2">
         <div class="bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
           <p class="text-lg">選択肢</p>
-          @foreach ($quiz->choices as $key => $choice)
-            <span class="pl-5 text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{$key+1}}.{{ $choice->note }}</span>
-            <input type="checkbox" name="selection-answer" class="cursor-pointer">
-            @if($choice->answer_flag ==1)
-              <span class="text-red-400 hidden show-answer">正解</span>
-            @endif   
-            <br>
-          @endforeach
+            @foreach ($quiz->choices as $key => $choice)
+              <span class="pl-5 text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{$key+1}}.{{ $choice->note }}</span>
+              <input type="checkbox" name="selection" class="cursor-pointer" id="{{$key+1}}">
+              @if($choice->answer_flag ==1)
+                <span class="text-red-400 hidden show-answer">正解</span>
+              @endif   
+              <br>
+            @endforeach
         </div>
         <div class="my-2">
           <p id="show-answer-commentary"class="hidden bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
@@ -30,9 +30,11 @@
           <x-primary-button class="mt-4" id="guest-show-submit">
             送信する
           </x-primary-button>
-          <x-primary-button class="hidden my-2" id="show-back" >
-            <a href="{{ route('guest.index') }}">戻る</a>
-          </x-primary-button>
+          <a href="{{ route('guest.index') }}">
+            <x-primary-button class="hidden my-2" id="show-back" >
+              戻る
+            </x-primary-button>
+        </a>
         </div>
       </div>
     </div>

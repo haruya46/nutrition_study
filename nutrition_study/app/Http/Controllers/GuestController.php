@@ -19,7 +19,7 @@ class GuestController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Quiz $quiz ,Request $request)
     {
         //
     }
@@ -39,7 +39,6 @@ class GuestController extends Controller
     {
         return view("guest.show",compact('quiz'));
     }
-
 
     /**
      * Show the form for editing the specified resource.

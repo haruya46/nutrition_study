@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
   
   Route::get('/', [GuestController::class, 'index'])->name('guest.index');
   Route::get('show/{quiz}', [GuestController::class, 'show'])->name('guest.show');
+  // Route::post('guest', [GuestController::class, 'store'])->name('guest.store');
 
   
   // ↓ログインユーザー用root
