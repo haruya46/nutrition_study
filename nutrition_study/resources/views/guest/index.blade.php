@@ -8,7 +8,7 @@
         <div class="mt-4">
           <div class="bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
             <div class="mt-4">
-              <a href="{{route('guest.show', $quiz) }}">
+              <a href="{{route('guest.show', [$quiz,100]) }}">
                 <x-primary-button class="bg-teal-700 float-right">問題を解く</x-primary-button>
               </a>
               <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{!! nl2br(htmlspecialchars($quiz->note)) !!}</h1>

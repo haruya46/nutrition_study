@@ -24,17 +24,16 @@ Route::middleware('auth')->group(function () {
   
   Route::resource('quiz', QuizController::class)->middleware('auth');
   
-  Route::get("guest/show_answer/{quiz}/{correct_flag}", [GuestController::class, "show_answer"])
-  ->name("guest.show_answer");
-
+  
+  Route::get("guest/show_answer/{quiz}", [GuestController::class, "show_answer"])->name("guest.show_answer");
   
   
   require __DIR__ . '/auth.php';
   
   Route::get('/', [GuestController::class, 'index'])->name('guest.index');
-  Route::get('show/{quiz}', [GuestController::class, 'show'])->name('guest.show');
+  Route::get('show/{quiz}/{correct_flag}', [GuestController::class, 'show'])->name('guest.show');
  
-
+  
   
   // ↓ログインユーザー用root
   Route::middleware('auth')->group(function () {

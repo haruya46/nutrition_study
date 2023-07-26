@@ -58,15 +58,14 @@ class GuestController extends Controller
         if($guest_answers==$true_answers){
             $correct_flag=1;
         }else{
-            $correct_flag=0;
+            $correct_flag=2;
         }
     //    $note= $quiz->commentary;
-       return view("guest.show",compact("quiz","correct_flag"));
+    return view("guest.show",compact("quiz","correct_flag"));
     //    return back($correct_flag);
         // return back()->with("message",$correct_flag);
         // return back()->with(["message",$correct_flag],["note",$note]);
     }
-   
 
 
     /**
