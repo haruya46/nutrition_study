@@ -19,8 +19,8 @@
               @foreach ($quiz->choices as $key => $choice)
                 <span class="pl-5 text-lg text-gray-700 font-semibold hover:underline cursor-pointer">{{$key+1}}.{{ $choice->note }}</span>
                 <input type="checkbox" name="{{$choice->id}}" class="cursor-pointer" >
-                @if($choice->answer_flag ==1)
-                  <span class="text-red-400 hidden show-answer">正解</span>
+                @if($choice->answer_flag == 1)
+                  <span class="text-red-400 hidden" id="show-answer">正解</span>
                 @endif   
                 <br>
               @endforeach
@@ -32,7 +32,7 @@
               戻る
             </x-secondary-button>
           </a>
-          <x-primary-button class="mt-4">
+          <x-primary-button class="mt-4" id="#guest-show-submit">
             送信する
           </x-primary-button>
           @elseif($correct_flag == 1)

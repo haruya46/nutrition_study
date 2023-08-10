@@ -10,12 +10,10 @@ Alpine.start();
 // jqueryの記述
 $(function(){
 // guest.show
-    // $('#guest-show-submit').click(function(){
-    //     $('.show-answer').fadeIn();
-    //     $('#show-answer-commentary').fadeIn();
-    //     $('#guest-show-submit').fadeOut();
-    //     $('#show-back').fadeIn();
-    // });
+    $('#guest-show-submit').click(function(){
+        $('#show-answer').fadeIn();
+        
+    });
 
 //quiz.index
     $('.quiz-index-choices-button').on("click",function(){

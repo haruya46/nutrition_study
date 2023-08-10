@@ -15,12 +15,16 @@
             <x-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
               問題一覧
             </x-nav-link>
+            @can('admin')
             <x-nav-link :href="route('quiz.create')" :active="request()->routeIs('quiz.create')">
               問題作成
             </x-nav-link>
+            @endcan
+            @can('admin')
             <x-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
               Guest画面
             </x-nav-link>
+            @endcan
           </div>
         </div>
   
@@ -54,6 +58,11 @@
               <!-- Authentication -->
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
+                <x-dropdown-link :href="route('login')"
+                  onclick="event.preventDefault();
+                                                  this.closest('form').submit();">
+                  {{ __('Log in') }}
+                </x-dropdown-link>
   
                 <x-dropdown-link :href="route('logout')"
                   onclick="event.preventDefault();
