@@ -15,6 +15,9 @@
             <x-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
               問題一覧
             </x-nav-link>
+            <x-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
+              問題を解く
+            </x-nav-link>
             @can('admin')
             <x-nav-link :href="route('quiz.create')" :active="request()->routeIs('quiz.create')">
               問題作成
@@ -58,11 +61,11 @@
               <!-- Authentication -->
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <x-dropdown-link :href="route('login')"
+                {{-- <x-dropdown-link :href="route('login')"
                   onclick="event.preventDefault();
                                                   this.closest('form').submit();">
                   {{ __('Log in') }}
-                </x-dropdown-link>
+                </x-dropdown-link> --}}
   
                 <x-dropdown-link :href="route('logout')"
                   onclick="event.preventDefault();
@@ -96,12 +99,19 @@
         <x-responsive-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
           問題一覧
         </x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
+          問題を解く
+        </x-responsive-nav-link>
+        @can('admin')
         <x-responsive-nav-link :href="route('quiz.create')" :active="request()->routeIs('quiz.create')">
           問題作成
         </x-responsive-nav-link>
-              <x-responsive-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
+        @endcan
+        @can('admin')
+        <x-responsive-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
           Guest画面
         </x-responsive-nav-link>
+        @endcan
   
       </div>
   

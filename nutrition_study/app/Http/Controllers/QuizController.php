@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Quiz;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 class QuizController extends Controller
 {
 
@@ -22,6 +22,7 @@ class QuizController extends Controller
      */
     public function create()
     {
+        Gate::authorize('admin');
         return view('quiz.create');
     }
 
@@ -30,6 +31,7 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
+        Gate::authorize('admin');
         $quiz = new Quiz();
         $quiz->note = $request->note;
         $quiz->commentary=$request->commentary;
@@ -53,6 +55,7 @@ class QuizController extends Controller
      */
     public function edit(Quiz $quiz)
     {
+        Gate::authorize('admin');
         return view('quiz.edit', compact('quiz'));
     }
 
@@ -61,6 +64,7 @@ class QuizController extends Controller
      */
     public function update(Request $request, Quiz $quiz)
     {
+        Gate::authorize('admin');
         $quiz->note = $request->note;
         $quiz->commentary=$request->commentary;
         $quiz->save();
@@ -75,6 +79,7 @@ class QuizController extends Controller
      */
     public function destroy(Quiz $quiz)
     {
+        Gate::authorize('admin');
         $quiz->delete();
         $ChoiceController = app()->make('App\Http\Controllers\ChoiceController');
         $ChoiceController->destroy($quiz);

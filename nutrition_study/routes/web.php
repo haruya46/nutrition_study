@@ -34,7 +34,6 @@ Route::middleware('auth')->group(function () {
   Route::get('show/{quiz}/{correct_flag}', [GuestController::class, 'show'])->name('guest.show');
  
   
-  
   // ↓ログインユーザー用root
   Route::middleware('auth')->group(function () {
     Route::resource('quiz', QuizController::class);

@@ -12,8 +12,14 @@
 
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
+          <x-nav-link :href="route('guest.index')" :active="request()->routeIs('quiz.index')">
             問題一覧
+          </x-nav-link>
+          <x-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
+            ログイン
+          </x-nav-link>
+          <x-nav-link :href="route('register')" :active="request()->routeIs('quiz.index')">
+            新規登録
           </x-nav-link>
         </div>
       </div>
@@ -42,15 +48,14 @@
             {{-- <x-dropdown-link :href="route('profile.edit')">
               {{ __('Profile') }}
             </x-dropdown-link> --}}
+            
 
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
               @csrf
-              <x-dropdown-link :href="route('login')"
-                  onclick="event.preventDefault();
-                                                  this.closest('form').submit();">
-                  {{ __('Log in') }}
-                </x-dropdown-link>
+              {{-- <x-dropdown-link :href="route('login')">
+                {{ __('Log in') }}
+              </x-dropdown-link> --}}
 
               <x-dropdown-link :href="route('logout')"
                 onclick="event.preventDefault();
@@ -84,7 +89,10 @@
         問題一覧
       </x-responsive-nav-link>
       <x-responsive-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
-        管理者用
+        ログイン
+      </x-responsive-nav-link>
+      <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('quiz.index')">
+        新規登録
       </x-responsive-nav-link>
     </div>
   </div>

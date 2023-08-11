@@ -1,8 +1,6 @@
 <x-app-layout>
   <x-slot name="header">
-      問題一覧(guest)
-
-
+      問題一覧
   </x-slot>
 
   {{-- 投稿一覧表示用のコード --}}
