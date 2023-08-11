@@ -40,6 +40,9 @@
               <div class="my-2">
                 <p id="show-answer-commentary"class="bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
                   <span class="text-lg">解説</span><br>{!! nl2br(htmlspecialchars($quiz->commentary)) !!}</p>
+                  <x-secondary-button class="my-2" id="show-answer-button" >
+                    答えを表示する
+                  </x-secondary-button>
                 <a href="{{ route('guest.index',[$quiz,100]) }}">
                   <x-secondary-button class="my-2" id="show-back" >
                     戻る
@@ -52,8 +55,11 @@
               <span class="p-2 text-x1 text-red-500 font-bold">不正解です</span>
               <p id="show-answer-commentary"class="bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
                 <span class="text-lg">解説</span><br>{!! nl2br(htmlspecialchars($quiz->commentary)) !!}</p>
+                <x-secondary-button class="my-2" id="show-answer-button" >
+                  答えを表示する
+                </x-secondary-button>
               <a href="{{ route('guest.index',[$quiz,100]) }}">
-                <x-secondary-button class="my-2" id="show-back" >
+                <x-secondary-button class="my-2">
                   戻る
                 </x-secondary-button>
               </a>

@@ -10,7 +10,7 @@ Alpine.start();
 // jqueryの記述
 $(function(){
 // guest.show
-    $('#guest-show-submit').click(function(){
+    $('#show-answer-button').click(function(){
         $('#show-answer').fadeIn();
         
     });
