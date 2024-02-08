@@ -28,6 +28,12 @@
               Guest画面
             </x-nav-link>
             @endcan
+            @can('admin')
+            <x-nav-link :href="route('profile.index')" :active="request()->routeIs('profile.index')">
+              ユーザー一覧
+          </x-nav-link>
+          @endcan
+
           </div>
         </div>
   

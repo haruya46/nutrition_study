@@ -45,7 +45,7 @@ class ChoiceController extends Controller
             }else{
                 $choice->answer_flag=0;
             }
-            $choice->quiz_id = $quiz_id;
+          $choice->quiz_id = $quiz_id;  
             $choice->save();
         }
 
