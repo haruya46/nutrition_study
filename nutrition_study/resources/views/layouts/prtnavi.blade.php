@@ -44,8 +44,14 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
-                問題一覧
+            <x-responsive-nav-link :href="route('portfolio.index')" :active="request()->routeIs('portfolio.index')">
+                ホーム
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('portfolio.movie')" :active="request()->routeIs('portfolio.movie')">
+                動画編集
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('portfolio.webcreate')" :active="request()->routeIs('portfolio.webcreate')">
+                web制作
             </x-responsive-nav-link>
         </div>
 </nav>
