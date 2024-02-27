@@ -22,6 +22,8 @@ use App\Http\Controllers\PortfolioController;
 //guestユーザー用
 //ポートフォリオサイト
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
+Route::get('/movie', [PortfolioController::class, 'movie'])->name('portfolio.movie');
+Route::get('/web', [PortfolioController::class, 'webcreate'])->name('portfolio.webcreate');
 
 //管理栄養士学習サイト
 Route::get("nutritionist/guest/show_answer/{quiz}", [GuestController::class, "show_answer"])->name("guest.show_answer");

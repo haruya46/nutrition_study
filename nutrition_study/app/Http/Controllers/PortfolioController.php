@@ -13,6 +13,15 @@ class PortfolioController extends Controller
     {
         return view('portfolio.index');
     }
+    public function movie()
+    {
+        return view('portfolio.movie');
+    }
+    public function webcreate()
+    {
+        return view('portfolio.webcreate');
+    }
+
 
     /**
      * Show the form for creating a new resource.
