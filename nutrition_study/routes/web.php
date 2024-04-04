@@ -18,12 +18,13 @@ use App\Http\Controllers\PortfolioController;
 */
 
 
-
 //guestユーザー用
 //ポートフォリオサイト
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
-Route::get('/movie', [PortfolioController::class, 'movie'])->name('portfolio.movie');
-Route::get('/web', [PortfolioController::class, 'webcreate'])->name('portfolio.webcreate');
+//確認ページ
+Route::post('/portfolio/confirm', [PortfolioController::class,'confirm'])->name('portfolio.confirm');
+//送信完了ページ
+Route::post('/portfolio', [PortfolioController::class,'store'])->name('portfolio.store');
 
 //管理栄養士学習サイト
 Route::get("nutritionist/guest/show_answer/{quiz}", [GuestController::class, "show_answer"])->name("guest.show_answer");

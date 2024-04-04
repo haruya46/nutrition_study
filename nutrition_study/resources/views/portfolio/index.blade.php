@@ -1,54 +1,86 @@
-<x-PrtTop-layout>
-
-<p>こんにちは！はるやクリエイティブチームです！私たちは、美しいwebサイトを作り上げることが得意で、お客様のビジョンを実現するお手伝いをすることを誇りに思っています。</p>
-<p>私たちの特徴は何かと言えば、お客様のニーズに寄り添い、プロジェクトが最初から最後までスムーズに進行することです。私たちはクリエイティブなアイデアとテクニカルなスキルを駆使して、お客様の期待を超えるWebサイトを制作します。そして、それを驚くほどリーズナブルな価格で提供します。
-</p>
-
-<p>InteSmileがあなたのウェブプロジェクトをサポートし、共に成長できることを楽しみにしています。お気軽にお問い合わせください！</p>
-<h2>Contact</h2>
-<div>
-    <p>お問い合わせ</p>
-    <p>お問い合わせお待ちしております
-    はるやクリエイティブはあなたのプロジェクトを成功に導くお手伝いを
-    します。質問や相談があれば、気軽にお知らせください。
-    後日、担当者よりご連絡させていただきます。
-    </p>
-
-</div>
-
-<h2>service</h2>
-<div>
+<x-PrtTop-layout id="home">
+<div class="main-top">
     <div>
-        <h3>ホームページ制作</h3>
-        <p>0から作ることによりSEOに最適なwebサイトを作ります！お客様のマネタイズや集客に貢献します！</p>
+        <h3>LCE</h3>
+        <p>LCE（LinkCreativeEncourage）は繋がりで物を作り出すことで<br>間接的に社会的貢献し勇気と希望を与えます！</p>
     </div>
-        <div>
-            <a href="">
-                <p>詳細はこちら</p>
-            </a>
-        </div>
 </div>
-<div>
+<div class="works" id="works">
+    <h4>works</h4>
+    <iframe class="youtube"width="560" height="315" src="https://www.youtube.com/embed/YWqQic3XVHY?si=d6SOg--0ZkFrPSx6" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>自己紹介動画</p>
+</div>
+
+
+<div class="service" id="service">
+    <h4>service</h4>
     <div>
-        <h3>動画編集</h3>
-        <p>youtube用の動画編集とサムネイルの制作代行させていただきます。お客様の売り上げを上げることを第一に考え、編集だけでなく提案やマーケティング等もさせて頂きます</p>
+
     </div>
-        <div>
-            <a href="">
-                <p>詳細はこちら</p>
-            </a>
+    <div class="contact-btn">
+        <div class="contact-btn-box">
+            ご依頼はこちらから
         </div>
+    </div>
+
 </div>
-<h2>Contact</h2>
-<div>
-    <p>お問い合わせ</p>
-    <p>お問い合わせお待ちしております<br>
-    はるやクリエイティブはあなたのプロジェクトを成功に導くお手伝いを<br>
-    します。質問や相談があれば、気軽にお知らせください。<br>
-    後日、担当者よりご連絡させていただきます。
+
+
+<div class="about" id="about">
+<h4>about</h4>
+</div>
+
+
+<div class="contact"id="contact">
+    <h4>contact</h4>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">お問い合わせ</div>
     
-    </p>
-
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('portfolio.confirm') }}">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="email" class="col-md-3 col-form-label text-md-right">メールアドレス</label>
+    
+                                <div class="col-md-9">
+                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autofocus>
+    
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="contact" class="col-md-3 col-form-label text-md-right">お問い合わせ内容</label>
+                                <div class="col-md-9">
+                                    <textarea id="contact" class="form-control  @error('contact') is-invalid @enderror" name="contact" cols="30" rows="10"></textarea>
+    
+                                    @error('contact')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+    
+                            <div class="form-group row mb-0">
+                                <div class="col-md-9 offset-md-3">
+                                    <button type="submit" class="btn btn-primary">
+                                        お問い合わせ内容の確認へ
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 </x-PrtTop-layout>

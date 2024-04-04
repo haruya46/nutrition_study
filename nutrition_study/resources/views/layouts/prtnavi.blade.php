@@ -5,24 +5,27 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('portfolio.index') }}">
+                    <a href="#home">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-right">
-                    <x-nav-link :href="route('portfolio.index')" :active="request()->routeIs('portfolio.index')">
-                        ホーム
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-right justify-items-end">
+                    <x-nav-link href="#home">
+                        homu
                     </x-nav-link>
-                    <x-nav-link :href="route('portfolio.movie')" :active="request()->routeIs('portfolio.movie')">
-                        動画編集
+                    <x-nav-link href="#works">
+                        works
                     </x-nav-link>
-                    <x-nav-link :href="route('portfolio.webcreate')" :active="request()->routeIs('portfolio.webcreate')">
-                        web制作
+                    <x-nav-link href="#service">
+                        service
                     </x-nav-link>
-                    <x-nav-link href="https://twitter.com/haruyamovie">
-                        Twitter
+                    <x-nav-link href="#about">
+                        about
+                    </x-nav-link>
+                    <x-nav-link href="#contact">
+                        contact
                     </x-nav-link>
                 </div>
             </div>
@@ -45,13 +48,19 @@
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('portfolio.index')" :active="request()->routeIs('portfolio.index')">
-                ホーム
+                home
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('portfolio.movie')" :active="request()->routeIs('portfolio.movie')">
-                動画編集
+            <x-responsive-nav-link href="#works">
+                works
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('portfolio.webcreate')" :active="request()->routeIs('portfolio.webcreate')">
-                web制作
+            <x-responsive-nav-link href="#service">
+                service
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="#about">
+                about
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="#contact">
+                contact
             </x-responsive-nav-link>
         </div>
 </nav>
