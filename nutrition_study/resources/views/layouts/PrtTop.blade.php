@@ -10,12 +10,11 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    {{-- <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
-    {{-- <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset("https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap")}}" rel="stylesheet"> --}}
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href="{{secure_asset('/assets/css/app.css')}}" rel="stylesheet">
 
     <!-- Scripts -->
+    <link href="{{asset('css/app.css?20240404')}}"rel="stylecheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta name="description" content="動画編集を依頼するならLCE 個人事業主の特権でどこよりもローコストで出来ます！まずはお問い合わせ！">
     <script>
