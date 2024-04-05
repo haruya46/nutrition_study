@@ -14,8 +14,8 @@
     <link href="{{secure_asset('/assets/css/app.css')}}" rel="stylesheet">
 
     <!-- Scripts -->
-    <link href="{{asset('css/app.css?20240404')}}"rel="stylecheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="{{asset('css/app.css?20240404')}}"rel="stylecheet"> 
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     <meta name="description" content="動画編集を依頼するならLCE 個人事業主の特権でどこよりもローコストで出来ます！まずはお問い合わせ！">
     <script>
         (function(d) {
