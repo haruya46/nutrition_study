@@ -33,6 +33,7 @@
         gtag('config', 'G-3X6XFYD0WP');
         </script>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 

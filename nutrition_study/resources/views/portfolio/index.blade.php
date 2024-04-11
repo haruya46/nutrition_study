@@ -7,8 +7,45 @@
 </div>
 <div class="works" id="works">
     <h4>works</h4>
-    <iframe class="youtube"width="560" height="315" src="https://www.youtube.com/embed/YWqQic3XVHY?si=d6SOg--0ZkFrPSx6" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p>自己紹介動画</p>
+    <div class="works-choice">
+        <div class="btn works-btn movie-btn">
+        <p> 動画編集</p>
+        </div>
+        <div class="btn works-btn web-site-btn">
+            <p>web制作</p>
+        </div>
+    </div>
+    <div>
+        <div class="movie">
+            <div class="movie-sample">
+                <iframe width="1083" height="609" src="https://www.youtube.com/embed/YWqQic3XVHY" title="自己紹介動画完成" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>自己紹介動画</p>
+            </div>
+            <h5>Shorts</h5>
+            <div class="movie-sample">
+                <iframe width="315" height="560" src="https://www.youtube.com/embed/O6oKUuvmudQ" title="犬田布岬の神秘体験" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>犬田布岬の神秘体験 Instagramリール動画用</p>
+            </div>
+        </div>
+        <div class="web-site">
+            <div>
+                <p>管理栄養士国家試験対策サイト</p>
+                <p>知人が管理栄養士の勉強のために自分が問題にしたいものを記入しいつでも携帯一つで学習をできるようにしたいという思いを受け作りました</p>
+                <x-nav-link :href="route('guest.index')" :active="request()->routeIs('quiz.index')">
+                    サイトを見る
+                </x-nav-link>
+            </div>
+            <div>
+                <p>株式会社reach様</p>
+                <p>（株）reach様よりホームページの作成の依頼をいただきWordpressを使用したホームページを作成いたしました</p>
+                <a href="https://www.reach-staff.jp/"></a>
+                <x-nav-link href="https://www.reach-staff.jp/">
+                    サイトを見る
+                </x-nav-link>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
@@ -33,13 +70,6 @@
 
 <div class="contact"id="contact">
     <h4>contact</h4>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">お問い合わせ</div>
-    
-                    <div class="card-body">
                         <form method="POST" action="{{ route('portfolio.confirm') }}">
                             @csrf
                             <div class="form-group row">
@@ -71,16 +101,11 @@
     
                             <div class="form-group row mb-0">
                                 <div class="col-md-9 offset-md-3">
-                                    <button type="submit" class="btn btn-primary">
-                                        お問い合わせ内容の確認へ
+                                    <button type="submit" class="btn">
+                                        内容を確認して送信する
                                     </button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 </x-PrtTop-layout>

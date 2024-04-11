@@ -35,6 +35,21 @@ $(function(){
 
 
 
-
-});
+    
+    //quiz.index
+        $('.web-site-btn').on("click",function(){
+            $(this).parent().find(".web-site").fadeIn();
+            $(this).parent().find('.movie').hide();
+            // $('.quiz-index-choices').fadeIn();
+            // $('.quiz-index-choices-button').fadeOut();
+            // $('.quiz-index-choices-button-hidden').fadeIn();
+        });
+        $('.movie-btn').on("click",function(){
+            $(this).parent().find(".movie").fadeIn();
+            $(this).parent().find('.web-site').hide();
+            // $('.quiz-index-choices').fadeIn();
+            // $('.quiz-index-choices-button').fadeOut();
+            // $('.quiz-index-choices-button-hidden').fadeIn();
+        });
+    });
 // ここまで

@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 共通 */
+.btn{
+    padding: 0.1%;
+    border: solid  10px #444444 ;
+    border-radius: 10px;
+    background-color: #444444;
+    color: #FFFFFF;
+}
 
+/* main-top */
 .main-top{
     text-align: center;
     padding: 15%;
@@ -13,20 +22,51 @@
     font-style: normal;
 font-size: 50px;
 }
+/* works*/
 .works{
     text-align: center;
     padding: 5%;
     background-color: aliceblue;
 }
 .works h4{
-    padding-bottom: 5%;
+    padding-bottom: 3%;
     font-size: 30px;
+}
+.works-choice{
+    margin-bottom: 0.5%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-content: space-around;
+    
+    /*並び順*/
+    /*
+    flex-start：左寄せ（デフォルト）
+    flex-end：右寄せ
+    center： 中央寄せ
+    space-between：残り余白の均等割り 
+    space-around：左右余白 ＋ 均等割り
+    */
 }
 .youtube{
     display: block;
-    margin: 0 auto;
+    margin:auto;
     max-width: 100%;
 }
+
+.web-site{
+    display: none;
+}
+.movie{
+    justify-content: center;
+}
+.movie h5{
+    font-size:20px ;
+}
+.movie-sample{
+    display: inline-block;
+}
+/* service*/
 .service{
     text-align: center;
     padding: 5%;
@@ -35,6 +75,7 @@ font-size: 50px;
     padding-bottom: 5%;
     font-size: 30px;
 }
+/* about*/
 .about{
     background-color: aliceblue;
     text-align: center;
@@ -44,6 +85,8 @@ font-size: 50px;
     padding-bottom: 5%;
     font-size: 30px;
 }
+
+/* contact*/
 .contact{
     text-align: center;
     padding: 5%;
@@ -53,7 +96,3 @@ font-size: 50px;
     padding-bottom: 5%;
     font-size: 30px;
 }
-.contact-text{
-    justify-content: center;
-} 
-
