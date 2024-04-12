@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 /* 共通 */
+@media screen and (max-width: 959px) {
+    /* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    .service-main th,td {
+        font-size: 10px;
+    }
+}
 .btn{
     padding: 0.1%;
     border: solid  10px #444444 ;
@@ -20,7 +29,10 @@
     font-family: "toppan-bunkyu-midashi-go-std", sans-serif;
     font-weight: 900;
     font-style: normal;
-font-size: 50px;
+    font-size: 300%;
+}
+.main-top p{
+    font-size: 120%;
 }
 /* works*/
 .works{
@@ -48,23 +60,18 @@ font-size: 50px;
     space-around：左右余白 ＋ 均等割り
     */
 }
-.youtube{
-    display: block;
-    margin:auto;
-    max-width: 100%;
-}
 
 .web-site{
     display: none;
 }
-.movie{
-    justify-content: center;
-}
 .movie h5{
     font-size:20px ;
 }
-.movie-sample{
-    display: inline-block;
+.youtube iframe {
+    width: 100%;
+}
+.youtube-shorts{
+    width: 100%;
 }
 /* service*/
 .service{
@@ -73,6 +80,18 @@ font-size: 50px;
 }
 .service h4{
     padding-bottom: 5%;
+    font-size: 30px;
+}
+.service-main table{
+    margin-top: 1%;
+    display: inline;
+}
+.service-main p{
+    font-size: 20px;
+}
+.service-main th,td {
+    border: solid 1px;              /* 枠線指定 */
+    padding: 10px;
     font-size: 30px;
 }
 /* about*/

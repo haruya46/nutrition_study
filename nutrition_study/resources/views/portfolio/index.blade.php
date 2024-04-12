@@ -1,4 +1,7 @@
 <x-PrtTop-layout id="home">
+<div class="main">
+
+</div>
 <div class="main-top">
     <div>
         <h3>LCE</h3>
@@ -17,13 +20,13 @@
     </div>
     <div>
         <div class="movie">
-            <div class="movie-sample">
-                <iframe width="1083" height="609" src="https://www.youtube.com/embed/YWqQic3XVHY" title="自己紹介動画完成" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="movie-sample youtube">
+                <iframe src="https://www.youtube.com/embed/YWqQic3XVHY?si=IXFx3dyARnaUdHzL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <p>自己紹介動画</p>
             </div>
             <h5>Shorts</h5>
             <div class="movie-sample">
-                <iframe width="315" height="560" src="https://www.youtube.com/embed/O6oKUuvmudQ" title="犬田布岬の神秘体験" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/O6oKUuvmudQ" title="犬田布岬の神秘体験" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <p>犬田布岬の神秘体験 Instagramリール動画用</p>
             </div>
         </div>
@@ -51,13 +54,26 @@
 
 <div class="service" id="service">
     <h4>service</h4>
-    <div>
-
-    </div>
-    <div class="contact-btn">
-        <div class="contact-btn-box">
-            ご依頼はこちらから
-        </div>
+    <div class="service-main">
+        <p>料金表</p>
+        <table style:border="5">
+        <tr>
+            <th>サービス名</th>
+            <th>料金</th>
+            <th>単位</th>
+        </tr>
+        <tr>
+            <td>動画編集代行</td>
+            <td>800～</td>
+            <td>1分あたり</td>
+        </tr>
+        <tr>
+            <td>ディレクター</td>
+            <td>2000~</td>
+            <td>1分あたり</td>
+        </tr>
+        </table>
+        
     </div>
 
 </div>
