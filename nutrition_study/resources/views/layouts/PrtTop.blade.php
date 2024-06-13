@@ -37,19 +37,19 @@
 </head>
 
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-            @include('layouts.prtnavi')
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
-
-        <!-- Page Content -->
+<body>
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-right justify-items-end">
+        <x-nav-link href="#home">
+            homu
+        </x-nav-link>
+        <x-nav-link href="#works">
+            works
+        </x-nav-link>
+        <x-nav-link href="#contact">
+            contact
+        </x-nav-link>
+    </div>
+    <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>

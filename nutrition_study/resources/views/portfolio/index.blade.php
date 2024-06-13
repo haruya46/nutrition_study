@@ -10,14 +10,9 @@
 </div>
 <div class="works" id="works">
     <h4>works</h4>
-    <div class="works-choice">
         <div class="btn works-btn movie-btn">
         <p> 動画編集</p>
         </div>
-        <div class="btn works-btn web-site-btn">
-            <p>web制作</p>
-        </div>
-    </div>
     <div>
         <div class="movie">
             <div class="movie-sample youtube">
@@ -31,6 +26,9 @@
             </div>
         </div>
         <div class="web-site">
+            <div class="btn works-btn movie-btn">
+                <p>web制作</p>
+            </div>
             <div>
                 <p>管理栄養士国家試験対策サイト</p>
                 <p>知人が管理栄養士の勉強のために自分が問題にしたいものを記入しいつでも携帯一つで学習をできるようにしたいという思いを受け作りました</p>
@@ -50,39 +48,6 @@
 
     </div>
 </div>
-
-
-<div class="service" id="service">
-    <h4>service</h4>
-    <div class="service-main">
-        <p>料金表</p>
-        <table style:border="5">
-        <tr>
-            <th>サービス名</th>
-            <th>料金</th>
-            <th>単位</th>
-        </tr>
-        <tr>
-            <td>動画編集代行</td>
-            <td>800～</td>
-            <td>1分あたり</td>
-        </tr>
-        <tr>
-            <td>ディレクター</td>
-            <td>2000~</td>
-            <td>1分あたり</td>
-        </tr>
-        </table>
-        
-    </div>
-
-</div>
-
-
-<div class="about" id="about">
-<h4>about</h4>
-</div>
-
 
 <div class="contact"id="contact">
     <h4>contact</h4>

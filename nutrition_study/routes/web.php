@@ -26,10 +26,10 @@ Route::post('/portfolio/confirm', [PortfolioController::class,'confirm'])->name(
 //送信完了ページ
 Route::post('/portfolio', [PortfolioController::class,'store'])->name('portfolio.store');
 
-//管理栄養士学習サイト
-Route::get("nutritionist/guest/show_answer/{quiz}", [GuestController::class, "show_answer"])->name("guest.show_answer");
-Route::get('nutritionist/guest', [GuestController::class, 'index'])->name('guest.index');
-Route::get('nutritionist/show/{quiz}/{correct_flag}', [GuestController::class, 'show'])->name('guest.show');
+//クイズタイム
+Route::get("quiztime/show_answer/{quiz}", [GuestController::class, "show_answer"])->name("guest.show_answer");
+Route::get('quiztime', [GuestController::class, 'index'])->name('guest.index');
+Route::get('quiztime/show/{quiz}/{correct_flag}', [GuestController::class, 'show'])->name('guest.show');
 
 
 // ↓ログインユーザー用root
@@ -39,9 +39,9 @@ Route::middleware('auth')->group(function () {
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-//管理栄養士学習サイト
+//クイズタイム
 Route::middleware('auth')->group(function () {
-  Route::resource('nutritionist/quiz', QuizController::class);
+  Route::resource('quiztime/quiz', QuizController::class);
 });
 require __DIR__ . '/auth.php';
   // ↑ログインユーザー用root

@@ -44,26 +44,7 @@
     padding-bottom: 3%;
     font-size: 30px;
 }
-.works-choice{
-    margin-bottom: 0.5%;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    justify-content: space-around;
-    
-    /*並び順*/
-    /*
-    flex-start：左寄せ（デフォルト）
-    flex-end：右寄せ
-    center： 中央寄せ
-    space-between：残り余白の均等割り 
-    space-around：左右余白 ＋ 均等割り
-    */
-}
 
-.web-site{
-    display: none;
-}
 .movie h5{
     font-size:20px ;
 }
