@@ -113,11 +113,14 @@ main{
 }
 
 /* contact */
+.contact{
+    margin: 0 5% 10% 5%;
+}
 .contact-form{
     text-align: left;
 }
 .contact-button{
-    margin: 0 auto;
+    text-align: center;
 }
 /* レスポンシブ */
 @media all and (max-width :670px){

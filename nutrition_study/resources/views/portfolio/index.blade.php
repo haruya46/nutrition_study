@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <div class="content"id="contact">
+    <div class="content contact"id="contact">
         <div>
             <h2>contact</h2>
             <p>すこしでも興味を持ってくれた人はこちらから</p>
@@ -76,7 +76,7 @@
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
                         <label for="title" class="font-semibold leading-none mt-4">名前</label>
-                        <input type="text" name="name" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="name" value="{{old('name')}}" placeholder="Enter Title">
+                        <input type="text" name="name" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="name" value="{{old('name')}}" placeholder="Enter Name">
                     </div>
                 </div>
                 <div class="md:flex items-center">
