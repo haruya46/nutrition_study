@@ -6,12 +6,22 @@
           <!-- Logo -->
           <div class="shrink-0 flex items-center">
             <a href="{{ route('portfolio.index') }}">
-              クイズタイム
+              LCE
             </a>
           </div>
   
           <!-- Navigation Links -->
           <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            @can('admin')
+            <x-nav-link :href="route('portfolio.create')" :active="request()->routeIs('portfolio.create')">
+              ポートフォリオサイト新規投稿用
+            </x-nav-link>
+            @endcan
+            @can('admin')
+            <x-nav-link :href="route('portfolio.admin')" :active="request()->routeIs('portfolio.admin')">
+              ポートフォリオサイト管理
+            </x-nav-link>
+            @endcan
             <x-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
               問題一覧
             </x-nav-link>

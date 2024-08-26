@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,15 +22,15 @@ use App\Http\Controllers\PortfolioController;
 //guestユーザー用
 //ポートフォリオサイト
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
-//確認ページ
-Route::post('/portfolio/confirm', [PortfolioController::class,'confirm'])->name('portfolio.confirm');
-//送信完了ページ
-Route::post('/portfolio', [PortfolioController::class,'store'])->name('portfolio.store');
+Route::controller(ContactController::class)->group(function(){
+  Route::get('portfolio.index', 'create')->name('portfolio.create');
+  Route::post('contact/store', 'store')->name('contact.store');
+});
 
 //クイズタイム
-Route::get("quiztime/show_answer/{quiz}", [GuestController::class, "show_answer"])->name("guest.show_answer");
-Route::get('quiztime', [GuestController::class, 'index'])->name('guest.index');
-Route::get('quiztime/show/{quiz}/{correct_flag}', [GuestController::class, 'show'])->name('guest.show');
+Route::get("quiz/show_answer/{quiz}", [GuestController::class, "show_answer"])->name("guest.show_answer");
+Route::get('quiz', [GuestController::class, 'index'])->name('guest.index');
+Route::get('quiz/show/{quiz}/{correct_flag}', [GuestController::class, 'show'])->name('guest.show');
 
 
 // ↓ログインユーザー用root
@@ -41,7 +42,11 @@ Route::middleware('auth')->group(function () {
 });
 //クイズタイム
 Route::middleware('auth')->group(function () {
-  Route::resource('quiztime/quiz', QuizController::class);
+  Route::resource('admin/quiz', QuizController::class);
+  //管理者用画面
+  Route::get('admin/create', [PortfolioController::class, 'create'])->name('portfolio.create');
+  Route::post('admin', [PortfolioController::class, 'portfoliostore'])->name('portfolio.portfoliostore');
+  Route::get('admin', [PortfolioController::class, 'admin'])->name('portfolio.admin');
 });
 require __DIR__ . '/auth.php';
   // ↑ログインユーザー用root

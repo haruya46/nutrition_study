@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="description" content="クイズタイムでは、世界中の人と問題を共有し解きあったり、自分の勉強にも使うことが出来ます">
-        <title>クイズタイム</title>
+        <title>LCE</title>
         <link rel="manifest" href="/manifest.json">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

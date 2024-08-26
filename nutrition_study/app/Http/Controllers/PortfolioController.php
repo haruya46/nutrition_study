@@ -7,6 +7,7 @@ use App\Http\Requests\ContactFormRequest;
 use App\Mail\ContactSendmail;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactForm;
+use App\Models\ProfileAbout;
 
 
 class PortfolioController extends Controller
@@ -16,7 +17,28 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        return view('portfolio.index');
+        $profile_About=profileAbout::all();
+        return view('portfolio.index', compact('profile_About'));
+    }
+
+    // admin
+    public function portfoliostore(Request $request)
+    {
+        $profile_About=new profileAbout();
+        $profile_About->name=$request->name;
+        $profile_About->body=$request->body;
+        if (request('image')){
+            $name = request()->file('image')->getClientOriginalName();
+            request()->file('image')->move('storage/images', $name);
+            $profile_About->image = $name;
+        }
+        $profile_About->save();
+        return redirect()->route('portfolio.create');
+    }
+    public function admin()
+    {
+        $profile_About=profileAbout::all();
+        return view('portfolio.admin', compact('profile_About'));
     }
 
 
@@ -25,23 +47,11 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function confirm(ContactFormRequest $request)
-    {
-        $contact = $request->all();
-        return view('portfolio.confirm',compact('contact'));
+        return view('portfolio.create');
     }
     public function store(Request $request)
     {
-        $contact = $request->all();
-        Mail::to('info@lce.tokyo')->send(new ContactSendmail($contact));
-        $request->session()->regenerateToken();
-        return view('portfolio.thanks');
+
     }
 
     /**
