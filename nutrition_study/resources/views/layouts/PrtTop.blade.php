@@ -75,6 +75,7 @@
     <main>
         {{ $slot }}
     </main>
+    <a href="//af.moshimo.com/af/c/click?a_id=4679295&p_id=3541&pc_id=8543&pl_id=53054" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1888/000000053054.jpg" width="769" height="95" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=4679295&p_id=3541&pc_id=8543&pl_id=53054" width="1" height="1" style="border:none;" loading="lazy">
 </body>
 
 </html>
